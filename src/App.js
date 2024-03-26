@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import User from "./components/User";
 import Newbook from "./components/Newbook";
 import Oldbook from "./components/Oldbook";
+import Sign from "./components/Sign";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
@@ -19,40 +21,12 @@ function App() {
             <Link to="/">home</Link>
           </li>
           <li>
-            <Link to="/about">about</Link>
-          </li>
-          <li>
-            <Link to="/context">context</Link>
-          </li>
-          <li>
-            <Link to="/user">user</Link>
-          </li>
-          <li>
-            <Link to="/user/1">user1</Link>
-          </li>
-          <li>
-            <Link to="/user/2">user2</Link>
-          </li>
-          <li>
-            <Link to="/user/3">user3</Link>
-          </li>
-          <li>
-            <Link to="/hello/newbook">new book</Link>
-          </li>
-          <li>
-            <Link to="/hello/oldbook">old book</Link>
+            <Link to="/sign">sign</Link>
           </li>
         </ul>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/context" element={<Context />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/*" element={<Error />} />
-          <Route path="/user/:id" element={<User />} />
-          <Route path="/hello">
-            <Route path="newbook" element={<Newbook />} />
-            <Route path="oldbook" element={<Oldbook />} />
-          </Route>
+          <Route path="/sign" element={<Sign />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </div>
