@@ -6,6 +6,8 @@ import About from "./components/About";
 import Error from "./components/Error";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import User from "./components/User";
+import Newbook from "./components/Newbook";
+import Oldbook from "./components/Oldbook";
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
           <li>
             <Link to="/user/3">user3</Link>
           </li>
+          <li>
+            <Link to="/hello/newbook">new book</Link>
+          </li>
+          <li>
+            <Link to="/hello/oldbook">old book</Link>
+          </li>
         </ul>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -41,6 +49,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/*" element={<Error />} />
           <Route path="/user/:id" element={<User />} />
+          <Route path="/hello">
+            <Route path="newbook" element={<Newbook />} />
+            <Route path="oldbook" element={<Oldbook />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
